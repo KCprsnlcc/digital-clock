@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Digital Clock App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, feature-rich digital clock application built with React and TypeScript that offers multiple time-related functionalities in a sleek, user-friendly interface.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Digital Clock
+- Real-time clock display with seconds
+- Toggle between 12-hour and 24-hour formats
+- Show/hide date display
+- Timezone selection with support for multiple global regions
 
-### `npm start`
+### Stopwatch
+- Precise timing with millisecond accuracy
+- Start, stop, and reset functionality
+- Lap recording to track multiple time intervals
+- Visual lap history with scrollable interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Timer
+- Countdown timer with hours, minutes, and seconds input
+- Visual progress bar to show completion status
+- Pause, resume, and reset capabilities
+- Completion notification
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshot
 
-### `npm test`
+*[Add a screenshot of your application here]*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js (v12 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+```
+git clone https://github.com/yourusername/digital-clock.git
+cd digital-clock
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+```
+npm install
+```
 
-### `npm run eject`
+3. Start the development server:
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Open your browser and navigate to:
+```
+http://localhost:3000
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Switch Functions**: Use the navigation tabs at the top to switch between Digital Clock, Stopwatch, and Timer
+- **Digital Clock**: Toggle 24/12-hour format, show/hide date, and select different timezones
+- **Stopwatch**: Use the Start/Stop, Lap, and Reset buttons to control the stopwatch
+- **Timer**: Set hours, minutes, and seconds, then use Start/Pause and Reset to control the timer
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+- React
+- TypeScript
+- CSS3 (with custom animations)
+- Date/Time API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Customization
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can customize the appearance by modifying the CSS files for each component:
+- `src/components/DigitalClock.css`
+- `src/components/StopWatch.css`
+- `src/components/Timer.css`
+- `src/components/ClockNavigation.css`
+
+## License
+
+This project is licensed under the License see the [LICENSE](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Designed with a modern dark theme inspired by Dracula color palette
+- Built as a practical exercise for React state management and component architecture
