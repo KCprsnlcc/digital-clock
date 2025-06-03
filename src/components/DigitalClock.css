@@ -206,7 +206,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  min-width: 160px;
+  min-width: 120px;
   min-height: 36px;
   color: transparent;
   background-color: transparent !important;
