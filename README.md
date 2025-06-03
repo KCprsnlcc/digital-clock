@@ -1,6 +1,6 @@
 # Digital Clock App
 
-A modern, feature-rich digital clock application built with React and TypeScript that offers multiple time-related functionalities in a sleek, user-friendly interface. Featuring a responsive design with dark/light themes and optimized for various devices and screen orientations.
+A modern, feature-rich digital clock application built with React and TypeScript that offers multiple time-related functionalities in a sleek, user-friendly interface.
 
 ## Features
 
@@ -8,25 +8,21 @@ A modern, feature-rich digital clock application built with React and TypeScript
 - Real-time clock display with seconds
 - Toggle between 12-hour and 24-hour formats
 - Show/hide date display
-- Show/hide seconds display
-- Timezone selection with support for multiple global regions and offset display
-- Dark/light theme toggle
+- Timezone selection with support for multiple global regions
 
 ### Stopwatch
 - Precise timing with millisecond accuracy
 - Start, stop, and reset functionality
 - Lap recording to track multiple time intervals
 - Visual lap history with scrollable interface
-- Responsive controls optimized for touch devices
 
 ### Timer
 - Countdown timer with hours, minutes, and seconds input
 - Visual progress bar to show completion status
 - Pause, resume, and reset capabilities
 - Completion notification
-- Optimized interface for different screen sizes
 
-## Screenshots
+## Screenshot
 
 ![Digital Clock Screenshot](./public/image.png)
 
@@ -40,7 +36,7 @@ A modern, feature-rich digital clock application built with React and TypeScript
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/digital-clock.git
+git clone https://github.com/KCprsnlcc/digital-clock.git
 cd digital-clock
 ```
 
@@ -82,10 +78,11 @@ You can customize the appearance by modifying the CSS files for each component:
 - `src/components/Timer.css`
 - `src/components/ClockNavigation.css`
 
-### Responsive Design Features
-- Landscape mode detection and optimization
-- Touch device detection for enhanced mobile experience
-- Optimized layouts for various screen sizes
-- Adaptive font sizing for different device widths
-- Improved readability on small screens
-- Compact UI elements on mobile devices
+## License
+
+This project is licensed under the License see the [LICENSE](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Designed with a modern dark theme inspired by Dracula color palette
+- Built as a practical exercise for React state management and component architecture
