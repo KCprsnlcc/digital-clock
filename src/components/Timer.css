@@ -1,11 +1,18 @@
 .timer {
-  background-color: #1e2128;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  min-width: 400px;
+  background-color: var(--dark-container, #1a1a1a);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
   text-align: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light-theme .timer {
+  background-color: var(--light-container, #ffffff);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .timer-setup {
@@ -28,26 +35,42 @@
 }
 
 .timer-input {
-  background-color: #282a36;
-  color: #f8f8f2;
-  border: 2px solid #44475a;
-  border-radius: 5px;
-  padding: 0.7rem;
-  font-size: 1.8rem;
-  width: 4.5rem;
+  background-color: var(--dark-button, #232323);
+  color: var(--dark-text, #e0e0e0);
+  border: 1px solid var(--dark-secondary, #303030);
+  border-radius: 12px;
+  padding: 0.6rem;
+  font-size: 1.6rem;
+  width: 4rem;
   text-align: center;
-  font-family: 'Courier New', monospace;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .timer-input {
+  background-color: var(--light-button, #f0f0f0);
+  color: var(--light-text, #333333);
+  border: 1px solid var(--light-secondary, #e0e0e0);
 }
 
 .timer-input-group label {
   margin-top: 0.5rem;
-  color: #6272a4;
-  font-size: 0.9rem;
+  color: var(--dark-accent, #707070);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.light-theme .timer-input-group label {
+  color: var(--light-accent, #a8a8a8);
 }
 
 .timer-input:focus {
   outline: none;
-  border-color: #bd93f9;
+  border-color: #404040;
 }
 
 .timer-input::-webkit-outer-spin-button,
@@ -61,32 +84,70 @@
 }
 
 .timer-colon {
-  font-size: 2rem;
-  color: #f8f8f2;
-  margin: 0 0.5rem;
+  font-size: 1.8rem;
+  color: #707070;
+  margin: 0 0.4rem;
   padding-bottom: 1.5rem;
 }
 
 .timer-button {
-  background-color: #44475a;
-  color: #f8f8f2;
+  background-color: var(--dark-button, #232323);
+  color: var(--dark-accent, #909090);
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 1rem;
-  min-width: 140px;
+  font-size: 0.75rem;
+  min-width: 100px;
   transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 38px;
 }
 
-.timer-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.light-theme .timer-button {
+  background: linear-gradient(145deg, #f0f0f0, #e8e8e8);
+  color: var(--light-accent, #707070);
+}
+
+.dark-theme .timer-button {
+  background: linear-gradient(145deg, #232323, #1e1e1e);
+  color: var(--dark-accent, #a0a0a0);
+}
+
+.dark-theme .timer-button:hover:not(:disabled) {
+  background: linear-gradient(145deg, #2a2a2a, #232323);
+  transform: translateY(-1px);
+}
+
+.light-theme .timer-button:hover:not(:disabled) {
+  background: linear-gradient(145deg, #e8e8e8, #f0f0f0);
+  transform: translateY(-1px);
 }
 
 .timer-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.timer-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 32px;
+  background: transparent;
+  z-index: -1;
+  transition: all 0.2s ease;
 }
 
 .timer-button:disabled {
@@ -94,29 +155,47 @@
   cursor: not-allowed;
 }
 
-.timer-button.start,
-.timer-button.resume {
-  background-color: #50fa7b;
-  color: #282a36;
+.dark-theme .timer-button.start,
+.dark-theme .timer-button.resume,
+.dark-theme .timer-button.pause,
+.dark-theme .timer-button.reset {
+  background: linear-gradient(145deg, #333333, #2a2a2a);
+  color: var(--dark-text, #e0e0e0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.timer-button.pause {
-  background-color: #ffb86c;
-  color: #282a36;
+.light-theme .timer-button.start,
+.light-theme .timer-button.resume,
+.light-theme .timer-button.pause,
+.light-theme .timer-button.reset {
+  background: linear-gradient(145deg, #d8d8d8, #e5e5e5);
+  color: var(--light-text, #333333);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.timer-button.start::before,
+.timer-button.resume::before,
+.timer-button.pause::before,
+.timer-button.reset::before {
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
 }
 
 .timer-button.reset {
-  background-color: #ff5555;
   margin-left: 1rem;
 }
 
 .timer-display {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #f8f8f2;
-  font-family: 'Courier New', monospace;
-  margin-bottom: 2rem;
-  letter-spacing: 2px;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--dark-text, #e0e0e0);
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0px;
+  transition: color 0.3s ease;
+}
+
+.light-theme .timer-display {
+  color: var(--light-text, #333333);
 }
 
 .timer-controls {
@@ -127,24 +206,33 @@
 
 .timer-progress-container {
   width: 100%;
-  height: 8px;
-  background-color: #44475a;
-  border-radius: 4px;
+  height: 4px;
+  background-color: var(--dark-secondary, #303030);
+  border-radius: 2px;
   overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.light-theme .timer-progress-container {
+  background-color: var(--light-secondary, #e0e0e0);
 }
 
 .timer-progress-bar {
   height: 100%;
-  background-color: #bd93f9;
-  border-radius: 4px;
-  transition: width 0.5s ease;
+  background-color: var(--dark-accent, #404040);
+  border-radius: 2px;
+  transition: width 0.5s ease, background-color 0.3s ease;
+}
+
+.light-theme .timer-progress-bar {
+  background-color: var(--light-accent, #a8a8a8);
 }
 
 .timer-complete-message {
-  font-size: 1.5rem;
-  color: #50fa7b;
+  font-size: 1.2rem;
+  color: #a0a0a0;
   margin-top: 1rem;
-  animation: pulse 1.5s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {

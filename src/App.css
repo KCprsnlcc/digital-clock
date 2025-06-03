@@ -2,43 +2,74 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #282c34;
-  color: white;
+  background-color: var(--dark-bg, #121212);
+  color: var(--dark-text, #e0e0e0);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App.light-theme {
+  background-color: var(--light-bg, #f5f5f7);
+  color: var(--light-text, #333333);
 }
 
 .app-header {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   text-align: center;
-  background-color: #1a1d24;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--dark-container, #1a1a1a);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.light-theme .app-header {
+  background-color: var(--light-container, #ffffff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 2rem;
-  background: linear-gradient(45deg, #ff79c6, #bd93f9, #8be9fd, #50fa7b);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  font-size: 1.5rem;
+  color: var(--dark-accent, #a0a0a0);
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.light-theme .app-header h1 {
+  color: var(--light-text, #333333);
 }
 
 .app-content {
   flex: 1;
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 1.5rem;
+  max-width: 800px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  overflow-y: auto;
+}
+
+@media (max-width: 480px) {
+  .app-content {
+    padding: 1rem 0.5rem;
+  }
 }
 
 .app-footer {
   text-align: center;
-  padding: 1rem 0;
-  background-color: #1a1d24;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-  font-size: 0.9rem;
-  color: #6272a4;
+  padding: 0.75rem 0;
+  background-color: var(--dark-container, #1a1a1a);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+  font-size: 0.7rem;
+  color: var(--dark-accent, #707070);
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-theme .app-footer {
+  background-color: var(--light-container, #ffffff);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  color: var(--light-accent, #a8a8a8);
 }
 
 @media (max-width: 768px) {
