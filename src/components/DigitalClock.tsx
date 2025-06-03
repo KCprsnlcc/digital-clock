@@ -223,17 +223,7 @@ const DigitalClock: React.FC = () => {
             <span className="label">{showSeconds ? 'SEC OFF' : 'SEC ON'}</span>
           </button>
           
-          {isTouchDevice && (
-            <button 
-              className="fullscreen-button"
-              onClick={() => document.documentElement.requestFullscreen()}
-              aria-label="Enter fullscreen mode"
-              title="Enter fullscreen mode"
-            >
-              <span className="icon" aria-hidden="true">⛶</span>
-              <span className="label">Fullscreen</span>
-            </button>
-          )}
+          {/* Fullscreen feature removed */}
         </div>
       </div>
     </div>
